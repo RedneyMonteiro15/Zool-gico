@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\TANIA\\Documents\\zoologico\\zoologico\\zoologico.csproj": {}
+    "C:\\Users\\TANIA\\Documents\\Repositorio local\\Zool-gico\\zoologico\\zoologico.csproj": {}
   },
   "projects": {
-    "C:\\Users\\TANIA\\Documents\\zoologico\\zoologico\\zoologico.csproj": {
+    "C:\\Users\\TANIA\\Documents\\Repositorio local\\Zool-gico\\zoologico\\zoologico.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\TANIA\\Documents\\zoologico\\zoologico\\zoologico.csproj",
+        "projectUniqueName": "C:\\Users\\TANIA\\Documents\\Repositorio local\\Zool-gico\\zoologico\\zoologico.csproj",
         "projectName": "zoologico",
-        "projectPath": "C:\\Users\\TANIA\\Documents\\zoologico\\zoologico\\zoologico.csproj",
+        "projectPath": "C:\\Users\\TANIA\\Documents\\Repositorio local\\Zool-gico\\zoologico\\zoologico.csproj",
         "packagesPath": "C:\\Users\\TANIA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\TANIA\\Documents\\zoologico\\zoologico\\obj\\",
+        "outputPath": "C:\\Users\\TANIA\\Documents\\Repositorio local\\Zool-gico\\zoologico\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\TANIA\\AppData\\Roaming\\NuGet\\NuGet.Config",
