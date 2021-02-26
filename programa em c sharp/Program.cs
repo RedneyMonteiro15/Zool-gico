@@ -18,12 +18,25 @@ class Animais
     List<Aves> listaAves;
     List<Peixes> listaPeixes;
     List<Repteis> listaRepteis;
-    public Animais(){
+    public Animais()
+    {
         listaMamifero = new List<Mamiferos>();
         listaAves = new List<Aves>();
         listaPeixes = new List<Peixes>();
-        listaRepteis = new List<Repteis>();    }
-
+        listaRepteis = new List<Repteis>();    
+    }
+    public void inserirMamifero(string nome, string descricao, int quantidade, string alimento){
+        listaMamifero.add(nome, descricao, quantidade, alimento);
+    }
+    public void inserirAves(string nome, string descricao, int quantidade, string alimento){
+        listaAves.add(nome, descricao, quantidade, alimento);
+    }
+    public void inserirPeixes(string nome, string descricao, int quantidade, string alimento){
+        listaPeixes.add(nome, descricao, quantidade, alimento);
+    }
+    public void inserirRepteis(string nome, string descricao, int quantidade, string alimento){
+        listaRepteis.add(nome, descricao, quantidade, alimento);
+    }
 }
 class Mamiferos
 {
