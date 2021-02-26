@@ -11,3 +11,16 @@ C:\Users\TANIA\Documents\zoologico\zoologico\obj\Debug\netcoreapp3.1\zoologico.c
 C:\Users\TANIA\Documents\zoologico\zoologico\obj\Debug\netcoreapp3.1\zoologico.dll
 C:\Users\TANIA\Documents\zoologico\zoologico\obj\Debug\netcoreapp3.1\zoologico.pdb
 C:\Users\TANIA\Documents\zoologico\zoologico\obj\Debug\netcoreapp3.1\zoologico.genruntimeconfig.cache
+C:\Users\TANIA\Documents\Repositorio local\Zool-gico\programa em c sharp\bin\Debug\netcoreapp3.1\zoologico.exe
+C:\Users\TANIA\Documents\Repositorio local\Zool-gico\programa em c sharp\bin\Debug\netcoreapp3.1\zoologico.deps.json
+C:\Users\TANIA\Documents\Repositorio local\Zool-gico\programa em c sharp\bin\Debug\netcoreapp3.1\zoologico.runtimeconfig.json
+C:\Users\TANIA\Documents\Repositorio local\Zool-gico\programa em c sharp\bin\Debug\netcoreapp3.1\zoologico.runtimeconfig.dev.json
+C:\Users\TANIA\Documents\Repositorio local\Zool-gico\programa em c sharp\bin\Debug\netcoreapp3.1\zoologico.dll
+C:\Users\TANIA\Documents\Repositorio local\Zool-gico\programa em c sharp\bin\Debug\netcoreapp3.1\zoologico.pdb
+C:\Users\TANIA\Documents\Repositorio local\Zool-gico\programa em c sharp\obj\Debug\netcoreapp3.1\zoologico.csprojAssemblyReference.cache
+C:\Users\TANIA\Documents\Repositorio local\Zool-gico\programa em c sharp\obj\Debug\netcoreapp3.1\zoologico.AssemblyInfoInputs.cache
+C:\Users\TANIA\Documents\Repositorio local\Zool-gico\programa em c sharp\obj\Debug\netcoreapp3.1\zoologico.AssemblyInfo.cs
+C:\Users\TANIA\Documents\Repositorio local\Zool-gico\programa em c sharp\obj\Debug\netcoreapp3.1\zoologico.csproj.CoreCompileInputs.cache
+C:\Users\TANIA\Documents\Repositorio local\Zool-gico\programa em c sharp\obj\Debug\netcoreapp3.1\zoologico.dll
+C:\Users\TANIA\Documents\Repositorio local\Zool-gico\programa em c sharp\obj\Debug\netcoreapp3.1\zoologico.pdb
+C:\Users\TANIA\Documents\Repositorio local\Zool-gico\programa em c sharp\obj\Debug\netcoreapp3.1\zoologico.genruntimeconfig.cache

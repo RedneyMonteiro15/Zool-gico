@@ -1,5 +1,5 @@
-﻿using System;
-
+﻿using System.Collections.Generic;
+using System;
 namespace zoologico
 {
     class Program
@@ -14,8 +14,15 @@ namespace zoologico
 }
 class Animais
 {
-    string nome, descricao;
-    int quantidade;
+    List<Mamiferos> listaMamifero;
+    List<Aves> listaAves;
+    List<Peixes> listaPeixes;
+    List<Repteis> listaRepteis;
+    public Animais(){
+        listaMamifero = new List<Mamiferos>();
+        listaAves = new List<Aves>();
+        listaPeixes = new List<Peixes>();
+        listaRepteis = new List<Repteis>();    }
 
 }
 class Mamiferos
@@ -24,10 +31,10 @@ class Mamiferos
     int quantidade;
     public Mamiferos(string nome, string descricao, int quantidade, string alimento)
     {
-        nome = this.nome;
-        descricao = this.descricao;
-        quantidade = this.quantidade;
-        alimento = this.alimento;
+        this.nome = nome;
+        this.descricao = descricao;
+        this.quantidade = quantidade;
+        this.alimento = alimento;
     }
     public void listarMamifero()
     {
@@ -36,8 +43,8 @@ class Mamiferos
         Console.WriteLine("Lista dos Mamiferos");
         Console.ResetColor();
         Console.WriteLine("--------------------");
-        Console.WriteLine("Nome: " + this.nome);
-        Console.WriteLine("Descrição: {0}" + descricao);
+        Console.WriteLine("Nome: {0}", nome);
+        Console.WriteLine("Descrição: {0}" , descricao);
         Console.WriteLine("Quantidade: {0}", quantidade);
         Console.WriteLine("Alimento: {0}", alimento);
         Console.WriteLine("--------------------");
@@ -46,13 +53,76 @@ class Mamiferos
 }
 class Aves
 {
-
+    string nome, descricao, alimento;
+    int quantidade;
+    public Aves(string nome, string descricao, int quantidade, string alimento)
+    {
+        this.nome = nome;
+        this.descricao = descricao;
+        this.quantidade = quantidade;
+        this.alimento = alimento;
+    }
+    public void listarAves()
+    {
+        Console.WriteLine("--------------------");
+        Console.ForegroundColor = ConsoleColor.Blue;
+        Console.WriteLine("Lista das Aves");
+        Console.ResetColor();
+        Console.WriteLine("--------------------");
+        Console.WriteLine("Nome: {0}", nome);
+        Console.WriteLine("Descrição: {0}" , descricao);
+        Console.WriteLine("Quantidade: {0}", quantidade);
+        Console.WriteLine("Alimento: {0}", alimento);
+        Console.WriteLine("--------------------");
+    }
 }
 class Peixes
 {
-
+    string nome, descricao, alimento;
+    int quantidade;
+    public Peixes(string nome, string descricao, int quantidade, string alimento)
+    {
+        this.nome = nome;
+        this.descricao = descricao;
+        this.quantidade = quantidade;
+        this.alimento = alimento;
+    }
+    public void listarPeixes()
+    {
+        Console.WriteLine("--------------------");
+        Console.ForegroundColor = ConsoleColor.Blue;
+        Console.WriteLine("Lista das Peixes");
+        Console.ResetColor();
+        Console.WriteLine("--------------------");
+        Console.WriteLine("Nome: {0}", nome);
+        Console.WriteLine("Descrição: {0}" , descricao);
+        Console.WriteLine("Quantidade: {0}", quantidade);
+        Console.WriteLine("Alimento: {0}", alimento);
+        Console.WriteLine("--------------------");
+    }
 }
 class Repteis
 {
-
+    string nome, descricao, alimento;
+    int quantidade;
+    public Repteis(string nome, string descricao, int quantidade, string alimento)
+    {
+        this.nome = nome;
+        this.descricao = descricao;
+        this.quantidade = quantidade;
+        this.alimento = alimento;
+    }
+    public void listarRepteis()
+    {
+        Console.WriteLine("--------------------");
+        Console.ForegroundColor = ConsoleColor.Blue;
+        Console.WriteLine("Lista dos Repteis");
+        Console.ResetColor();
+        Console.WriteLine("--------------------");
+        Console.WriteLine("Nome: {0}", nome);
+        Console.WriteLine("Descrição: {0}" , descricao);
+        Console.WriteLine("Quantidade: {0}", quantidade);
+        Console.WriteLine("Alimento: {0}", alimento);
+        Console.WriteLine("--------------------");
+    }
 }
