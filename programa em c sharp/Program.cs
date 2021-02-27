@@ -19,6 +19,45 @@ namespace zoologico
 
 class Zoologico{
     string nome;
+    List<Animais> listaAnimais;
+    List<Funcionarios> listaFuncionarios;
+    List<Clientes> listaClientes;
+    public Zoologico(string nome){
+        this.nome = nome;
+        listaAnimais = new List<Animais>();
+        listaClientes = new List<Clientes>();
+        listaFuncionarios = new List<Funcionarios>();
+    }
+    public void inserirAnimais(string nome, string especie, string descricao, int quantidade){
+        Animais a = new Animais(nome, especie, descricao, quantidade);
+        if(a == null){
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Erro ao inserir!!!");
+            Console.ResetColor();
+            return;
+        }
+        listaAnimais.Add(a);
+    }
+    public void inserirFuncionarios(string nome, int numero, string sexo, int nasc, string departamento, string habilidades, double salario){
+        Funcionarios f = new Funcionarios(nome, numero, sexo, nasc, departamento, habilidades, salario);
+        if(f == null){
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Erro ao inserir!!!");
+            Console.ResetColor();
+            return;
+        }
+        listaFuncionarios.Add(f);
+    }
+    public void inserirClientes(string nome, int numero, string sexo, int nasc,double saldo){
+        Clientes c = new Clientes(nome, numero, sexo, nasc, saldo);
+        if(c == null){
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Erro ao inserir!!!");
+            Console.ResetColor();
+            return;
+        }
+        listaClientes.Add(c);
+    }
 }
 class Animais{
     string nome, especie, descricao;
@@ -98,4 +137,3 @@ class Clientes{
         
     }
 }
-
