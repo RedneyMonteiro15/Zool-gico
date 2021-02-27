@@ -1,141 +1,92 @@
-﻿using System.Collections.Generic;
-using System;
-namespace zoologico
+﻿namespace zoologico
 {
     class Program
     {
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            Mamiferos m = new Mamiferos("Cão", "Latir", 8, "Ração");
-            m.listarMamifero();
+            
         }
     }
 }
-class Animais
-{
-    List<Mamiferos> listaMamifero;
-    List<Aves> listaAves;
-    List<Peixes> listaPeixes;
-    List<Repteis> listaRepteis;
-    public Animais()
-    {
-        listaMamifero = new List<Mamiferos>();
-        listaAves = new List<Aves>();
-        listaPeixes = new List<Peixes>();
-        listaRepteis = new List<Repteis>();    
-    }
-    public void inserirMamifero(string nome, string descricao, int quantidade, string alimento){
-        listaMamifero.add(nome, descricao, quantidade, alimento);
-    }
-    public void inserirAves(string nome, string descricao, int quantidade, string alimento){
-        listaAves.add(nome, descricao, quantidade, alimento);
-    }
-    public void inserirPeixes(string nome, string descricao, int quantidade, string alimento){
-        listaPeixes.add(nome, descricao, quantidade, alimento);
-    }
-    public void inserirRepteis(string nome, string descricao, int quantidade, string alimento){
-        listaRepteis.add(nome, descricao, quantidade, alimento);
-    }
-}
-class Mamiferos
-{
-    string nome, descricao, alimento;
-    int quantidade;
-    public Mamiferos(string nome, string descricao, int quantidade, string alimento)
-    {
-        this.nome = nome;
-        this.descricao = descricao;
-        this.quantidade = quantidade;
-        this.alimento = alimento;
-    }
-    public void listarMamifero()
-    {
-        Console.WriteLine("--------------------");
-        Console.ForegroundColor = ConsoleColor.Blue;
-        Console.WriteLine("Lista dos Mamiferos");
-        Console.ResetColor();
-        Console.WriteLine("--------------------");
-        Console.WriteLine("Nome: {0}", nome);
-        Console.WriteLine("Descrição: {0}" , descricao);
-        Console.WriteLine("Quantidade: {0}", quantidade);
-        Console.WriteLine("Alimento: {0}", alimento);
-        Console.WriteLine("--------------------");
-    }
 
+class Zoologico{
+    string nome;
 }
-class Aves
-{
-    string nome, descricao, alimento;
+class Animais{
+    string nome, especie, descricao;
     int quantidade;
-    public Aves(string nome, string descricao, int quantidade, string alimento)
-    {
+    public Animais(string nome, string especie, string descricao, int quantidade){
         this.nome = nome;
+        this.especie = especie;
         this.descricao = descricao;
         this.quantidade = quantidade;
-        this.alimento = alimento;
     }
-    public void listarAves()
-    {
+    public void listarAnimais(){
         Console.WriteLine("--------------------");
         Console.ForegroundColor = ConsoleColor.Blue;
-        Console.WriteLine("Lista das Aves");
+        Console.WriteLine(" Lista dos Animais  ");
         Console.ResetColor();
         Console.WriteLine("--------------------");
-        Console.WriteLine("Nome: {0}", nome);
-        Console.WriteLine("Descrição: {0}" , descricao);
-        Console.WriteLine("Quantidade: {0}", quantidade);
-        Console.WriteLine("Alimento: {0}", alimento);
-        Console.WriteLine("--------------------");
+        Console.WriteLine("Nome: {0}", this.nome);
+        Console.WriteLine("Especie: {0}",this.especie);
+        Console.WriteLine("Descrição: {0}", this.descricao);
+        Console.WriteLine("Quantidade: {0}", this.quantidade);
+        
     }
 }
-class Peixes
-{
-    string nome, descricao, alimento;
-    int quantidade;
-    public Peixes(string nome, string descricao, int quantidade, string alimento)
-    {
+class Funcionarios{
+    string nome, departamento, habilidades, sexo;
+    int numero, nasc;
+    double salario;
+    public Funcionarios(string nome, int numero, string sexo, int nasc, string departamento, string habilidades, double salario){
         this.nome = nome;
-        this.descricao = descricao;
-        this.quantidade = quantidade;
-        this.alimento = alimento;
+        this.numero = numero;
+        this.departamento = departamento;
+        this.habilidades = habilidades;
     }
-    public void listarPeixes()
-    {
+    public void listarFuncionarios(){
+        int anoAtual = DateTime.Now.Year;
+        int idade;
+        idade = anoAtual - nasc;
         Console.WriteLine("--------------------");
         Console.ForegroundColor = ConsoleColor.Blue;
-        Console.WriteLine("Lista das Peixes");
+        Console.WriteLine("Lista dos Funcionarios");
         Console.ResetColor();
         Console.WriteLine("--------------------");
-        Console.WriteLine("Nome: {0}", nome);
-        Console.WriteLine("Descrição: {0}" , descricao);
-        Console.WriteLine("Quantidade: {0}", quantidade);
-        Console.WriteLine("Alimento: {0}", alimento);
-        Console.WriteLine("--------------------");
+        Console.WriteLine("Nome: {0}", this.nome);
+        Console.WriteLine("Número: {0}",this.numero);
+        Console.WriteLine("Sexo: {0}", this.sexo);
+        Console.WriteLine("Idade: {0}", idade);
+        Console.WriteLine("Departamento: {0}", this.departamento);
+        Console.WriteLine("Habilidades: {0}", this.habilidades);
+        
     }
 }
-class Repteis
-{
-    string nome, descricao, alimento;
-    int quantidade;
-    public Repteis(string nome, string descricao, int quantidade, string alimento)
-    {
+class Clientes{
+    string nome, sexo;
+    int numero, nasc;
+    double saldo;
+    int anoAtual = DateTime.Now.Year;
+    public Clientes(string nome, int numero, string sexo, int nasc,double saldo){
         this.nome = nome;
-        this.descricao = descricao;
-        this.quantidade = quantidade;
-        this.alimento = alimento;
+        this.numero = numero;
+        this.saldo = saldo;
+        this.sexo = sexo;
+        this.saldo = saldo;
     }
-    public void listarRepteis()
-    {
+    public void listarClientes(){
+        int idade = anoAtual - this.nasc;
         Console.WriteLine("--------------------");
         Console.ForegroundColor = ConsoleColor.Blue;
-        Console.WriteLine("Lista dos Repteis");
+        Console.WriteLine(" Lista dos Clientes  ");
         Console.ResetColor();
         Console.WriteLine("--------------------");
-        Console.WriteLine("Nome: {0}", nome);
-        Console.WriteLine("Descrição: {0}" , descricao);
-        Console.WriteLine("Quantidade: {0}", quantidade);
-        Console.WriteLine("Alimento: {0}", alimento);
-        Console.WriteLine("--------------------");
+        Console.WriteLine("Nome: {0}", this.nome);
+        Console.WriteLine("Número: {0}", this.numero);
+        Console.WriteLine("Sexo: {0}", this.sexo);
+        Console.WriteLine("Idade: {0}", idade);
+        Console.WriteLine("Saldo: {0}", this.saldo);
+        
     }
 }
