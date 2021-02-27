@@ -1,4 +1,6 @@
-﻿namespace zoologico
+﻿using System.Collections.Generic;
+using System;
+namespace zoologico
 {
     class Program
     {
