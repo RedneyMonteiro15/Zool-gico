@@ -7,7 +7,12 @@ namespace zoologico
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            
+            Animais a = new Animais("Cão", "Domestico","Latir", 8);
+            Funcionarios f = new Funcionarios("Redney", 76, "M", 2002, "Limpeza", "Fazer limpesa", 650.98);
+            Clientes c = new Clientes("Monteiro", 89, "M", 2013, 50);
+            a.listarAnimais();
+            f.listarFuncionarios();
+            c.listarClientes();
         }
     }
 }
@@ -45,12 +50,13 @@ class Funcionarios{
         this.nome = nome;
         this.numero = numero;
         this.departamento = departamento;
+        this.sexo = sexo;
         this.habilidades = habilidades;
     }
     public void listarFuncionarios(){
         int anoAtual = DateTime.Now.Year;
         int idade;
-        idade = anoAtual - nasc;
+        idade = (anoAtual - nasc);
         Console.WriteLine("--------------------");
         Console.ForegroundColor = ConsoleColor.Blue;
         Console.WriteLine("Lista dos Funcionarios");
@@ -92,3 +98,4 @@ class Clientes{
         
     }
 }
+
