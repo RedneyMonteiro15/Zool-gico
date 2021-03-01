@@ -9,11 +9,15 @@ namespace zoologico
             bool loop = true;
             string nome, sexo, resp, descricao, especie, departamento, habilidades;
             int nasc, idade, op, quantidade, numero;
-            double saldo;
+            double saldo, salario;
             int anoAtual = DateTime.Now.Year;
+            Estrutura estru = new Estrutura();
+            Estrutura linha = new Estrutura();
+            Estrutura leia = new Estrutura();
+            Zoologico z = new Zoologico("CV - SV");
+            int teste = leia.leiaOp(3, 1);
+            Console.WriteLine(teste);
             while(loop){
-                Estrutura estru = new Estrutura();
-                Estrutura linha = new Estrutura();
                 estru.menu("Zoologico");
                 Console.WriteLine("Escolha a sua opção: ");
                 Console.WriteLine(" [1] - Animais \n [2] - Clientes\n [3] - Funcionarios");
@@ -24,6 +28,12 @@ namespace zoologico
                     if(op >= 1 && op <= 3){
                         if(op == 1){
                             estru.menu("Animais");
+                            Console.WriteLine("Escolha sua opção: ");
+                            Console.WriteLine(" [1] - Listar Animais\n [2] - Inserir Animal\n [3] - Remover Animal");
+                            linha.linha();
+                            Console.Write("Sua opção: ");
+                            op = int.Parse(Console.ReadLine());
+                            linha.linha();
                             Console.Write("Nome: ");
                             nome = Console.ReadLine();
                             Console.Write("Especie: ");
@@ -32,6 +42,7 @@ namespace zoologico
                             descricao = Console.ReadLine();
                             Console.Write("Quantidade: ");
                             quantidade = int.Parse(Console.ReadLine());
+                            z.inserirAnimais(nome, especie, descricao, quantidade);
                         }else if(op == 2){
                             estru.menu("Clientes");
                             Console.Write("Nome: ");
@@ -41,9 +52,11 @@ namespace zoologico
                             Console.Write("Sexo: ");
                             sexo = Console.ReadLine();
                             Console.Write("Ano nascimento: ");
-                            quantidade = int.Parse(Console.ReadLine());
+                            nasc = int.Parse(Console.ReadLine());
                             Console.Write("Saldo: ");
                             saldo = double.Parse(Console.ReadLine());
+                            idade = anoAtual - nasc;
+                            z.inserirClientes(nome, numero, sexo, idade, saldo);
                         }else{
                             estru.menu("Funcionarios");
                             Console.Write("Nome: ");
@@ -53,11 +66,15 @@ namespace zoologico
                             Console.Write("Sexo: ");
                             sexo = Console.ReadLine();
                             Console.Write("Ano nascimento: ");
-                            quantidade = int.Parse(Console.ReadLine());
+                            nasc = int.Parse(Console.ReadLine());
                             Console.Write("Departamento: ");
                             departamento = Console.ReadLine();
                             Console.Write("Habilidades: ");
                             habilidades = Console.ReadLine();
+                            Console.Write("Salario: ");
+                            salario = double.Parse(Console.ReadLine());
+                            idade = anoAtual - nasc;
+                            z.inserirFuncionarios(nome, numero, sexo, idade, departamento, habilidades, salario);
                         }
                         break;
                     }else{
@@ -124,8 +141,8 @@ class Zoologico{
         }
         listaFuncionarios.Add(f);
     }
-    public void inserirClientes(string nome, int numero, string sexo, int nasc,double saldo){
-        Clientes c = new Clientes(nome, numero, sexo, nasc, saldo);
+    public void inserirClientes(string nome, int numero, string sexo, int idade,double saldo){
+        Clientes c = new Clientes(nome, numero, sexo, idade, saldo);
         if(c == null){
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Erro ao inserir!!!");
@@ -223,5 +240,21 @@ class Estrutura{
         Console.WriteLine(" {0}  ", msg);
         Console.ResetColor();
         Console.WriteLine("--------------------");
+    }
+    public int leiaOp(int inf, int sup){
+        bool loop = true;
+        private int resultado;
+        int opc;
+        while(loop){
+            resultado = int.Parse(Console.ReadLine());
+            if(resultado >= inf && resultado <= sup){
+                return op;
+            }else{
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Opção Inválida!");
+                Console.ResetColor();
+                continue;
+            }
+        }
     }
 }
