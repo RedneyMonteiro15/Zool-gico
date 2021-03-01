@@ -6,7 +6,27 @@ namespace zoologico
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            bool loop = true;
+            string nome, sexo, resp;
+            int nasc, idade;
+            int anoAtual = DateTime.Now.Year;
+            while(loop){
+                Console.WriteLine("--------------------");
+                Console.WriteLine("     Zoológico      ");
+                Console.WriteLine("--------------------");
+                
+                Console.Write("Nome: ");
+                nome = Console.ReadLine();
+                Console.Write("Sexo: ");
+                sexo = Console.ReadLine();
+                Console.Write("Quer continuar [S/N]? ");
+                resp = Console.ReadLine();
+                char respt = resp[0];
+                if(respt == 'N' || respt == 'n'){
+                    break;
+                }
+            }
+            
             Animais a = new Animais("Cão", "Domestico","Latir", 8);
             Funcionarios f = new Funcionarios("Redney", 76, "M", 2002, "Limpeza", "Fazer limpesa", 650.98);
             Clientes c = new Clientes("Monteiro", 89, "M", 2013, 50);
