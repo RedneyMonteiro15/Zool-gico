@@ -7,14 +7,70 @@ namespace zoologico
         static void Main(string[] args)
         {
             bool loop = true;
-            string nome, sexo, resp;
-            int nasc, idade;
+            string nome, sexo, resp, descricao, especie, departamento, habilidades;
+            int nasc, idade, op, quantidade, numero;
+            double saldo;
             int anoAtual = DateTime.Now.Year;
             while(loop){
-                Console.WriteLine("--------------------");
-                Console.WriteLine("     Zoológico      ");
-                Console.WriteLine("--------------------");
-                
+                Estrutura estru = new Estrutura();
+                Estrutura linha = new Estrutura();
+                estru.menu("Zoologico");
+                Console.WriteLine("Escolha a sua opção: ");
+                Console.WriteLine(" [1] - Animais \n [2] - Clientes\n [3] - Funcionarios");
+                linha.linha();
+                while(loop){
+                    Console.Write("Sua opção: ");
+                    op = int.Parse(Console.ReadLine());
+                    if(op >= 1 && op <= 3){
+                        if(op == 1){
+                            estru.menu("Animais");
+                            Console.Write("Nome: ");
+                            nome = Console.ReadLine();
+                            Console.Write("Especie: ");
+                            especie = Console.ReadLine();
+                            Console.Write("Descrição: ");
+                            descricao = Console.ReadLine();
+                            Console.Write("Quantidade: ");
+                            quantidade = int.Parse(Console.ReadLine());
+                        }else if(op == 2){
+                            estru.menu("Clientes");
+                            Console.Write("Nome: ");
+                            nome = Console.ReadLine();
+                            Console.Write("Número: ");
+                            numero = int.Parse(Console.ReadLine());
+                            Console.Write("Sexo: ");
+                            sexo = Console.ReadLine();
+                            Console.Write("Ano nascimento: ");
+                            quantidade = int.Parse(Console.ReadLine());
+                            Console.Write("Saldo: ");
+                            saldo = double.Parse(Console.ReadLine());
+                        }else{
+                            estru.menu("Funcionarios");
+                            Console.Write("Nome: ");
+                            nome = Console.ReadLine();
+                            Console.Write("Número: ");
+                            numero = int.Parse(Console.ReadLine());
+                            Console.Write("Sexo: ");
+                            sexo = Console.ReadLine();
+                            Console.Write("Ano nascimento: ");
+                            quantidade = int.Parse(Console.ReadLine());
+                            Console.Write("Departamento: ");
+                            departamento = Console.ReadLine();
+                            Console.Write("Habilidades: ");
+                            habilidades = Console.ReadLine();
+                        }
+                        break;
+                    }else{
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Opção Invalida!!!");
+                        Console.ResetColor();
+                        continue;
+                    }
+                    
+                }
+
+
+
                 Console.Write("Nome: ");
                 nome = Console.ReadLine();
                 Console.Write("Sexo: ");
@@ -155,5 +211,17 @@ class Clientes{
         Console.WriteLine("Idade: {0}", idade);
         Console.WriteLine("Saldo: {0}", this.saldo);
         
+    }
+}
+class Estrutura{
+    public void linha(){
+        Console.WriteLine("--------------------");
+    }
+    public void menu(string msg){
+        Console.WriteLine("--------------------");
+        Console.ForegroundColor = ConsoleColor.Blue;
+        Console.WriteLine(" {0}  ", msg);
+        Console.ResetColor();
+        Console.WriteLine("--------------------");
     }
 }

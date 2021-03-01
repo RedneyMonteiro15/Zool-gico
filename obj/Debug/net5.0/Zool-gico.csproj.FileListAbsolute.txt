@@ -1,0 +1,5 @@
+C:\Users\TANIA\Documents\Repositorio local\Zool-gico\obj\Debug\net5.0\Zool-gico.csprojAssemblyReference.cache
+C:\Users\TANIA\Documents\Repositorio local\Zool-gico\obj\Debug\net5.0\Zool-gico.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\TANIA\Documents\Repositorio local\Zool-gico\obj\Debug\net5.0\Zool-gico.AssemblyInfoInputs.cache
+C:\Users\TANIA\Documents\Repositorio local\Zool-gico\obj\Debug\net5.0\Zool-gico.AssemblyInfo.cs
+C:\Users\TANIA\Documents\Repositorio local\Zool-gico\obj\Debug\net5.0\Zool-gico.csproj.CoreCompileInputs.cache
