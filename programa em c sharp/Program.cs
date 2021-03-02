@@ -9,7 +9,10 @@ namespace zoologico
             Console.WriteLine("Olá Mundo!");
             Zoologico z = new Zoologico();
             z.inserirAnimais("Cão", "Domestico","Latir", 8);
+            z.inserirAnimais("Gato", "Domestico","Latir", 5);
             z.listarAnimais();
+            z.monstrarAnimalNome("Gato");
+            z.monstrarAnimalEspecie("Domestico");
         }
     }
 }
@@ -37,6 +40,24 @@ class Zoologico
             a.monstrarAnimais();
         }
     }
+    public void monstrarAnimalNome(string nome){
+        foreach(Animais a in listaAnimais)
+        {
+            if(nome == a.getNomeAnimal())
+            {
+                a.monstrarAnimais();
+            }
+        }
+    }
+    public void monstrarAnimalEspecie(string especie){
+        foreach (Animais a in listaAnimais)
+        {
+            if (especie == a.getEspecie())
+            {
+                a.monstrarAnimais();
+            }
+        }
+    }
 }
 class Animais
 {
@@ -60,6 +81,13 @@ class Animais
         Console.WriteLine("Especie: {0}",this.especie);
         Console.WriteLine("Descrição: {0}", this.descricao);
         Console.WriteLine("Quantidade: {0}", this.quantidade);
-        
+    }
+    public string getNomeAnimal()
+    {
+        return this.nome;
+    }
+    public string getEspecie()
+    {
+        return this.especie;
     }
 }
