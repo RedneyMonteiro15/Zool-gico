@@ -10,7 +10,10 @@ namespace zoologico
             Zoologico z = new Zoologico();
             z.inserirAnimais("Cão", "Domestico","Latir", 8);
             z.inserirAnimais("Gato", "Domestico","Latir", 5);
+            z.inserirAnimais("Gato", "Herbivero","Latir", 5);
             z.listarAnimais();
+            z.RemoverAnimalNome("Gato");
+            z.RemoverAnimalEspecie("Herbivero");
             z.monstrarAnimalNome("Gato");
             z.monstrarAnimalEspecie("Domestico");
         }
@@ -57,6 +60,51 @@ class Zoologico
                 a.monstrarAnimais();
             }
         }
+    }
+    public Animais pesquisaAnimaisNome(string nome)
+    {
+        foreach (Animais a in listaAnimais)
+        {
+            if (nome == a.getNomeAnimal())
+            {
+                return a;
+            }
+        }
+        return null;
+    }
+    public void RemoverAnimalNome(string nome)
+    {   
+        Animais a = this.pesquisaAnimaisNome(nome);
+        if(a == null)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Erro, não foi possível encontrar o animal.");
+            Console.ResetColor();
+            return;
+        }
+        listaAnimais.Remove(a);
+    }
+    public Animais pesquisaAnimaisEspecie(string especie)
+    {
+        foreach (Animais a in listaAnimais)
+        {
+            if (especie == a.getEspecie())
+            {
+                return a;
+            }
+        }
+        return null;
+    }
+    public void RemoverAnimalEspecie(string especie)
+    {
+        Animais a = this.pesquisaAnimaisEspecie(especie);
+        if (a == null)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Erro ao remover animal.");
+            Console.ResetColor();
+        }
+        listaAnimais.Remove(a);
     }
 }
 class Animais
