@@ -31,11 +31,14 @@ class Zoologico
         Animais a = new Animais(nome, especie, descricao, quantidade);
         if(a == null){
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Erro ao inserir!!!");
+            Console.WriteLine("Erro ao inserir, registro!!!");
             Console.ResetColor();
             return;
         }
         listaAnimais.Add(a);
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.WriteLine("Registro do animal, adicionado com sucesso.");
+        Console.ResetColor();
     }
     public void listarAnimais(){
         foreach (Animais a in listaAnimais)
@@ -83,6 +86,9 @@ class Zoologico
             return;
         }
         listaAnimais.Remove(a);
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.WriteLine("Registro animal, removido com sucesso!");
+        Console.ResetColor();
     }
     public Animais pesquisaAnimaisEspecie(string especie)
     {
@@ -105,6 +111,9 @@ class Zoologico
             Console.ResetColor();
         }
         listaAnimais.Remove(a);
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.WriteLine("Registro animal, removido com sucesso!");
+        Console.ResetColor();
     }
 }
 class Animais
