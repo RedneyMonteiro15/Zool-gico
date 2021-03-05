@@ -8,6 +8,8 @@ namespace zoologico
         {
             Console.WriteLine("Olá Mundo!");
             Zoologico z = new Zoologico();
+            /*
+            
             z.inserirAnimais("Cão", "Domestico","Latir", 8);
             z.inserirAnimais("Gato", "Domestico","Latir", 5);
             z.inserirAnimais("Gato", "Herbivero","Latir", 5);
@@ -16,15 +18,19 @@ namespace zoologico
             z.RemoverAnimalEspecie("Herbivero");
             z.monstrarAnimalNome("Gato");
             z.monstrarAnimalEspecie("Domestico");
+            */
+            
         }
     }
 }
 class Zoologico
 {
     List<Animais> listaAnimais;
+    List<Funcionarios> listaFuncionarios;
     public Zoologico()
     {
         listaAnimais = new List<Animais>();
+        listaFuncionarios = new List<Funcionarios>();
     }
     public void inserirAnimais(string nome, string especie, string descricao, int quantidade)
     {
@@ -153,7 +159,7 @@ class Zoologico
             }
         }
     }
-    public Animais pesquisaFuncionarioNome(string nome)
+    public Funcionarios pesquisaFuncionarioNome(string nome)
     {
         foreach (Funcionarios f in listaFuncionarios)
         {
@@ -165,45 +171,44 @@ class Zoologico
         return null;
     }
 
-    //mudar todos para funcionario
-    public void RemoverAnimalNome(string nome)
+    public void RemoverFuncionarioNome(string nome)
     {   
-        Animais a = this.pesquisaAnimaisNome(nome);
-        if(a == null)
+        Funcionarios f = this.pesquisaFuncionarioNome(nome);
+        if(f == null)
         {
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Erro, não foi possível encontrar o animal.");
+            Console.WriteLine("Erro, não foi possível encontrar o registro funcionario.");
             Console.ResetColor();
             return;
         }
-        listaAnimais.Remove(a);
+        listaFuncionarios.Remove(f);
         Console.ForegroundColor = ConsoleColor.Green;
-        Console.WriteLine("Registro animal, removido com sucesso!");
+        Console.WriteLine("Registro funcionario, removido com sucesso!");
         Console.ResetColor();
     }
-    public Animais pesquisaAnimaisEspecie(string especie)
+    public Funcionarios pesquisaFuncionarioNumero(int numero)
     {
-        foreach (Animais a in listaAnimais)
+        foreach (Funcionarios f in listaFuncionarios)
         {
-            if (especie == a.getEspecie())
+            if (numero == f.getNumeroFuncionario())
             {
-                return a;
+                return f;
             }
         }
         return null;
     }
-    public void RemoverAnimalEspecie(string especie)
+    public void RemoverFuncionarioNumero(int numero)
     {
-        Animais a = this.pesquisaAnimaisEspecie(especie);
-        if (a == null)
+        Funcionarios f = this.pesquisaFuncionarioNumero(numero);
+        if (f == null)
         {
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Erro ao remover animal.");
+            Console.WriteLine("Erro ao remover registro funcionario.");
             Console.ResetColor();
         }
-        listaAnimais.Remove(a);
+        listaFuncionarios.Remove(f);
         Console.ForegroundColor = ConsoleColor.Green;
-        Console.WriteLine("Registro animal, removido com sucesso!");
+        Console.WriteLine("Registro funcionario, removido com sucesso!");
         Console.ResetColor();
     }
 }
@@ -249,7 +254,7 @@ class Funcionarios
         this.nome = nome;
         this.numero = numero;
         this.sexo = sexo;
-        int.nasc = nasc;
+        this.nasc = nasc;
         this.departamento = departamento;
         this.habilidades = habilidades;
         this.salario = salario;
@@ -268,5 +273,14 @@ class Funcionarios
         Console.WriteLine("Departamento: {0}", this.departamento);
         Console.WriteLine("Habilidades: {0}",this.habilidades);
         Console.WriteLine("Salario: {0}", this.salario);
+    }
+    public string getNomeFuncionario(){
+        return this.nome;
+    }
+    public int getNumeroFuncionario(){
+        return this.numero;
+    }
+    public string getSexoFuncionario(){
+        return this.sexo;
     }
 }
