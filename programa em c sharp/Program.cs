@@ -19,7 +19,24 @@ namespace zoologico
             z.monstrarAnimalNome("Gato");
             z.monstrarAnimalEspecie("Domestico");
             */
-            
+            Console.WriteLine("------------------------------------------");
+            z.inserirFuncionarios("Redney", 1, "M", 19, "Informatica", "Desenvolvimento de software", 808.97);
+            z.inserirFuncionarios("Monteiro", 2, "M", 28, "Veteriano", "Cuidador de animais", 797.53);
+            z.inserirFuncionarios("Spencer", 3, "F", 66, "Limpeza", "Faz a limpeza do zoologico", 605.99);
+            Console.WriteLine("------------------------------------------");
+            z.listarFuncionarios();
+            Console.WriteLine("------------------------------------------");
+            z.monstrarFuncionarioNome("Redney");
+            Console.WriteLine("------------------------------------------");
+            z.monstrarFuncionarioSexo("M");
+            Console.WriteLine("------------------------------------------");
+            z.monstrarFuncionarioSexo("F");
+            Console.WriteLine("------------------------------------------");
+            z.RemoverFuncionarioNome("Redney");
+            Console.WriteLine("------------------------------------------");
+            z.RemoverFuncionarioNumero(3);
+            Console.WriteLine("------------------------------------------");
+            z.listarFuncionarios();
         }
     }
 }
