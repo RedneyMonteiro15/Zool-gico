@@ -8,17 +8,24 @@ namespace zoologico
         {
             Console.WriteLine("Olá Mundo!");
             Zoologico z = new Zoologico();
-            /*
-            
+            Console.WriteLine("------------------------------------------");
             z.inserirAnimais("Cão", "Domestico","Latir", 8);
             z.inserirAnimais("Gato", "Domestico","Latir", 5);
             z.inserirAnimais("Gato", "Herbivero","Latir", 5);
+            Console.WriteLine("------------------------------------------");
             z.listarAnimais();
+            Console.WriteLine("------------------------------------------");
+            z.monstrarAnimalNome("Gato");
+            Console.WriteLine("------------------------------------------");
+            z.monstrarAnimalEspecie("Domestico");
+            Console.WriteLine("------------------------------------------");
             z.RemoverAnimalNome("Gato");
             z.RemoverAnimalEspecie("Herbivero");
-            z.monstrarAnimalNome("Gato");
-            z.monstrarAnimalEspecie("Domestico");
-            */
+            Console.WriteLine("------------------------------------------");
+            z.listarAnimais();
+            Console.WriteLine("------------------------------------------");
+            
+
             Console.WriteLine("------------------------------------------");
             z.inserirFuncionarios("Redney", 1, "M", 19, "Informatica", "Desenvolvimento de software", 808.97);
             z.inserirFuncionarios("Monteiro", 2, "M", 28, "Veteriano", "Cuidador de animais", 797.53);
