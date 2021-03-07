@@ -130,11 +130,75 @@ namespace zoologico
                         z.RemoverClienteNome(nome);
                     }else if(opC == 4){
                         Console.WriteLine("------------------------------");
-                        Console.WriteLine("Remover Cliente por Especie");
+                        Console.WriteLine("Remover Cliente por Número");
                         Console.WriteLine("------------------------------");
                         Console.Write("Número: ");
                         numero = int.Parse(Console.ReadLine());
                         z.RemoverClienteNumero(numero);
+                    }
+                }
+                if(op == 3){
+                    Console.WriteLine("------------------------------");
+                    Console.WriteLine("Funcionarios");
+                    Console.WriteLine("------------------------------");
+                    Console.WriteLine("Escolhe a sua opção: ");
+                    Console.WriteLine(" [1] - Inserir funcionarios\n [2] - Listar funcionarios\n [3] - Monstrar por nome\n [4] - Monstrar por especie\n [5] - Remover por nome\n [6] - Remover por Numero");
+                    Console.WriteLine("------------------------------");
+                    Console.Write("Escolhe a sua opção: ");
+                    opF = int.Parse(Console.ReadLine());
+                    if (opF == 1){
+                        Console.WriteLine("------------------------------");
+                        Console.WriteLine("Inserir Funcionarios");
+                        Console.WriteLine("------------------------------");
+                        Console.Write("Nome: ");
+                        nome = Console.ReadLine(); 
+                        Console.Write("Número: ");
+                        numero = int.Parse(Console.ReadLine());
+                        Console.Write("Sexo: ");
+                        sexo = Console.ReadLine();
+                        Console.Write("Ano nascimento: ");
+                        nasc = int.Parse(Console.ReadLine());
+                        Console.Write("Departamento: ");
+                        departamento = Console.ReadLine(); 
+                        Console.Write("Habilidades: ");
+                        habilidades = Console.ReadLine();
+                        Console.Write("Salario: ");
+                        salario = double.Parse(Console.ReadLine());
+                        idade = ano - nasc;
+                        z.inserirFuncionarios(nome, numero, sexo, idade, departamento, habilidades, salario);
+                    }else if(opF == 2){
+                        Console.WriteLine("------------------------------");
+                        Console.WriteLine("Listar Funcionarios");
+                        Console.WriteLine("------------------------------");
+                        z.listarFuncionarios();
+                    }else if(opF == 3){
+                        Console.WriteLine("------------------------------");
+                        Console.WriteLine("Monstrar Funcionarios por Nome");
+                        Console.WriteLine("------------------------------");
+                        Console.Write("Nome: ");
+                        nome = Console.ReadLine();
+                        z.monstrarFuncionarioNome(nome);
+                    }else if(opF == 4){
+                        Console.WriteLine("------------------------------");
+                        Console.WriteLine("Monstar Funcionarios por Sexo");
+                        Console.WriteLine("------------------------------");
+                        Console.Write("Sexo: ");
+                        sexo = Console.ReadLine();
+                        z.monstrarFuncionarioSexo(sexo);
+                    }else if(opF == 3){
+                        Console.WriteLine("------------------------------");
+                        Console.WriteLine("Remover Funcionario por Nome");
+                        Console.WriteLine("------------------------------");
+                        Console.Write("Nome: ");
+                        nome = Console.ReadLine();
+                        z.RemoverFuncionarioNome(nome);
+                    }else if(opF == 4){
+                        Console.WriteLine("------------------------------");
+                        Console.WriteLine("Remover Funcionario por Sexo");
+                        Console.WriteLine("------------------------------");
+                        Console.Write("Número: ");
+                        numero = int.Parse(Console.ReadLine());
+                        z.RemoverFuncionarioNumero(numero);
                     }
                 }
                 
