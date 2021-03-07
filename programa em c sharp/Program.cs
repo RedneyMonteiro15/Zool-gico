@@ -8,6 +8,7 @@ namespace zoologico
         {
             Console.WriteLine("Olá Mundo!");
             Zoologico z = new Zoologico();
+            /*
             Console.WriteLine("------------------------------------------");
             z.inserirAnimais("Cão", "Domestico","Latir", 8);
             z.inserirAnimais("Gato", "Domestico","Latir", 5);
@@ -44,6 +45,25 @@ namespace zoologico
             z.RemoverFuncionarioNumero(3);
             Console.WriteLine("------------------------------------------");
             z.listarFuncionarios();
+            */
+            z.inserirClientes("Redney", 1, "M", 17, 20.9);
+            z.inserirClientes("Manuel", 2, "F", 11, 50.678);
+            z.inserirClientes("Spencer", 3, "F", 27, 6.9);
+            z.inserirClientes("Monteiro", 4, "M", 67, 30.2);
+            Console.WriteLine("------------------------------------------");
+            z.listarClientes();
+            Console.WriteLine("------------------------------------------");
+            z.monstrarClienteSexo("M");
+            Console.WriteLine("------------------------------------------");
+            z.monstrarClienteSexo("F");
+            Console.WriteLine("------------------------------------------");
+            z.monstrarClienteNome("Redney");
+            Console.WriteLine("------------------------------------------");
+            z.RemoverClienteNome("Monteiro");
+            Console.WriteLine("------------------------------------------");
+            z.RemoverClienteNumero(2);
+            Console.WriteLine("------------------------------------------");
+            z.listarClientes();
         }
     }
 }
@@ -51,10 +71,12 @@ class Zoologico
 {
     List<Animais> listaAnimais;
     List<Funcionarios> listaFuncionarios;
+    List<Clientes> listaClientes;
     public Zoologico()
     {
         listaAnimais = new List<Animais>();
         listaFuncionarios = new List<Funcionarios>();
+        listaClientes = new List<Clientes>();
     }
     public void inserirAnimais(string nome, string especie, string descricao, int quantidade)
     {
@@ -233,6 +255,96 @@ class Zoologico
         listaFuncionarios.Remove(f);
         Console.ForegroundColor = ConsoleColor.Green;
         Console.WriteLine("Registro funcionario, removido com sucesso!");
+        Console.ResetColor();
+    }
+    public void inserirClientes(string nome, int numero, string sexo, int nasc, double salario)
+    {
+        Clientes c = new Clientes(nome, numero, sexo, nasc, salario);
+        if(c == null){
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Erro ao inserir, registro cliente!!!");
+            Console.ResetColor();
+            return;
+        }
+        listaClientes.Add(c);
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.WriteLine("Registro do cliente, adicionado com sucesso!!!");
+        Console.ResetColor();
+    }
+    public void listarClientes(){
+        foreach (Clientes c in listaClientes)
+        {
+            c.monstrarClientes();
+        }
+    }
+    public void monstrarClienteNome(string nome){
+        foreach(Clientes c in listaClientes)
+        {
+            if(nome == c.getNomeCliente())
+            {
+                c.monstrarClientes();
+            }
+        }
+    }
+    public void monstrarClienteSexo(string sexo){
+        foreach (Clientes c in listaClientes)
+        {
+            if (sexo == c.getSexoCliente())
+            {
+                c.monstrarClientes();
+            }
+        }
+    }
+    public Clientes pesquisaClienteNome(string nome)
+    {
+        foreach (Clientes c in listaClientes)
+        {
+            if (nome == c.getNomeCliente())
+            {
+                return c;
+            }
+        }
+        return null;
+    }
+
+    public void RemoverClienteNome(string nome)
+    {   
+        Clientes c = this.pesquisaClienteNome(nome);
+        if(c == null)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Erro, não foi possível encontrar o registro cliente!!!");
+            Console.ResetColor();
+            return;
+        }
+        listaClientes.Remove(c);
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.WriteLine("Registro cliente, removido com sucesso!");
+        Console.ResetColor();
+    }
+    public Clientes pesquisaClienteNumero(int numero)
+    {
+        foreach (Clientes c in listaClientes)
+        {
+            if (numero == c.getNumeroCliente())
+            {
+                return c;
+            }
+        }
+        return null;
+    }
+    public void RemoverClienteNumero(int numero)
+    {
+        Clientes c = this.pesquisaClienteNumero(numero);
+        if (c == null)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Erro ao remover registro Cliente!!!");
+            Console.ResetColor();
+        }
+        listaClientes.Remove(c);
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.WriteLine("Registro cliente, removido com sucesso!");
         Console.ResetColor();
     }
 }
