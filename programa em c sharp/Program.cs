@@ -308,3 +308,39 @@ class Funcionarios
         return this.sexo;
     }
 }
+class Clientes
+{
+    string nome, sexo;
+    int numero, nasc;
+    double saldo;
+    public Clientes(string nome, int numero, string sexo, int nasc, double saldo)
+    {
+        this.nome = nome;
+        this.numero = numero;
+        this.sexo = sexo;
+        this.nasc = nasc;
+        this.saldo = saldo;
+    }
+    public void monstrarClientes()
+    {
+        Console.WriteLine("----------------------");
+        Console.ForegroundColor = ConsoleColor.Blue;
+        Console.WriteLine("Lista dos Clientes");
+        Console.ResetColor();
+        Console.WriteLine("----------------------");
+        Console.WriteLine("Nome: {0}", this.nome);
+        Console.WriteLine("Número: {0}",this.numero);
+        Console.WriteLine("Sexo: {0}", this.sexo);
+        Console.WriteLine("Idade: {0}", this.nasc);
+        Console.WriteLine("Saldo: {0}", this.saldo);
+    }
+    public string getNomeCliente(){
+        return this.nome;
+    }
+    public int getNumeroCliente(){
+        return this.numero;
+    }
+    public string getSexoCliente(){
+        return this.sexo;
+    }
+}
