@@ -164,20 +164,21 @@ class Estrutura{
         Console.WriteLine("------------------------------");
     }
     public void cabecalho(string msg){
-        Console.WriteLine("------------------------------");
+        linha();
         Console.ForegroundColor = ConsoleColor.Blue;
-        Console.WriteLine("{0}", msg);
+        center(msg, 30);
         Console.ResetColor();
-        Console.WriteLine("------------------------------");
+        linha();
     }
     public void menu(params string[]texto){
         Console.ForegroundColor = ConsoleColor.Black;
         Console.BackgroundColor = ConsoleColor.White;
-        Console.WriteLine("Escolha sua opção: ");
+        Console.WriteLine("{0}", "Escolha sua opção:".PadRight(30));
         int c = 1;
+        string 
         foreach (var item in texto)
         {
-            Console.WriteLine(" [{0}] - {1}", c, item);
+            Console.WriteLine("{0[{1}] - {2}}", c, item);
             c += 1;
         }
         Console.ResetColor();
@@ -207,6 +208,14 @@ class Estrutura{
             Console.WriteLine("Opção Invalida!!! \nDigite um apenas S/N.");
             Console.ResetColor();
         }
+    }
+    public void center(string teste, int num){
+        int total, esquerda, direita;
+        string test = "";
+        total = num - teste.Length;
+        direita = (total / 2) + teste.Length;
+        esquerda = num - direita;
+        Console.WriteLine("{0}{1}", teste.PadLeft(direita, ' '), test.PadRight(esquerda-1, ' '));
     }
 }
 class Zoologico
