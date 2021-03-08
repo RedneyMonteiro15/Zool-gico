@@ -6,34 +6,25 @@ namespace zoologico
     {
         static void Main(string[] args)
         {
-            /*
             Zoologico z = new Zoologico();
-            int ano = 2021;
+            Estrutura e = new Estrutura();
+            int ano = DateTime.Now.Year;
             while (true){
                 int op, opA, opC, opF, numero, quantidade, nasc, idade;
                 string nome, sexo, departamento, habilidades, especie, descricao;
                 double saldo, salario;
-                Console.WriteLine("------------------------------");
-                Console.WriteLine("Zoologico CV-SV");
-                Console.WriteLine("------------------------------");
-                Console.WriteLine("Escolhe a sua opção: ");
-                Console.WriteLine(" [1] - Animais\n [2] - Clientes\n [3] - Funcionarios");
-                Console.WriteLine("------------------------------");
-                Console.Write("Escolhe a sua opção: ");
-                op = int.Parse(Console.ReadLine());
+                e.cabecalho("Zoologico");
+                e.menu("Animais", "Clientes", "Funcionarios");
+                e.linha();
+                op = e.leiaOp(6);
                 if(op == 1){
-                    Console.WriteLine("------------------------------");
-                    Console.WriteLine("Animais");
-                    Console.WriteLine("------------------------------");
+                    e.cabecalho("Animais");
                     Console.WriteLine("Escolhe a sua opção: ");
-                    Console.WriteLine(" [1] - Inserir aAnimais\n [2] - listar animais\n [3] - Monstrar por nome\n [4] - Monstrar por especie\n [5] - Remover por nome\n [6] - Remover por especie");
-                    Console.WriteLine("------------------------------");
-                    Console.Write("Escolhe a sua opção: ");
-                    opA = int.Parse(Console.ReadLine());
+                    e.menu("Inserir aAnimais", "listar animais", "Monstrar por nome", "Monstrar por especie", "Remover por nome", "Remover por especie");
+                    e.linha();
+                    opA = e.leiaOp(3);
                     if (opA == 1){
-                        Console.WriteLine("------------------------------");
-                        Console.WriteLine("Inserir Animais");
-                        Console.WriteLine("------------------------------");
+                        e.cabecalho("Inserir Animais");
                         Console.Write("Nome: ");
                         nome = Console.ReadLine(); 
                         Console.Write("Especie: ");
@@ -44,53 +35,37 @@ namespace zoologico
                         quantidade = int.Parse(Console.ReadLine());
                         z.inserirAnimais(nome, especie, descricao, quantidade);
                     }else if(opA == 2){
-                        Console.WriteLine("------------------------------");
-                        Console.WriteLine("Listar Animais");
-                        Console.WriteLine("------------------------------");
+                        e.cabecalho("Listar Animais");
                         z.listarAnimais();
                     }else if(opA == 3){
-                        Console.WriteLine("------------------------------");
-                        Console.WriteLine("Monstrar Animal por Nome");
-                        Console.WriteLine("------------------------------");
+                        e.cabecalho("Monstrar Animais por Nome");
                         Console.Write("Nome: ");
                         nome = Console.ReadLine();
                         z.monstrarAnimalNome(nome);
                     }else if(opA == 4){
-                        Console.WriteLine("------------------------------");
-                        Console.WriteLine("Monstar Animal por Especie");
-                        Console.WriteLine("------------------------------");
+                        e.cabecalho("Monstrar Animais por Especie");
                         Console.Write("Especie: ");
                         especie = Console.ReadLine();
                         z.monstrarAnimalEspecie(especie);
                     }else if(opA == 3){
-                        Console.WriteLine("------------------------------");
-                        Console.WriteLine("Remover Animal por Nome");
-                        Console.WriteLine("------------------------------");
+                        e.cabecalho("Remover Animais por Nome");
                         Console.Write("Nome: ");
                         nome = Console.ReadLine();
                         z.RemoverAnimalNome(nome);
                     }else if(opA == 4){
-                        Console.WriteLine("------------------------------");
-                        Console.WriteLine("Remover Animal por Especie");
-                        Console.WriteLine("------------------------------");
+                        e.cabecalho("Remover Animais por Especie");
                         Console.Write("Especie: ");
                         especie = Console.ReadLine();
                         z.RemoverAnimalEspecie(especie);
                     }
                 }
                 if(op == 2){
-                    Console.WriteLine("------------------------------");
-                    Console.WriteLine("Cliente");
-                    Console.WriteLine("------------------------------");
-                    Console.WriteLine("Escolhe a sua opção: ");
-                    Console.WriteLine(" [1] - Inserir clientes\n [2] - Listar clientes\n [3] - Monstrar por nome\n [4] - Monstrar por especie\n [5] - Remover por nome\n [6] - Remover por especie");
-                    Console.WriteLine("------------------------------");
-                    Console.Write("Escolhe a sua opção: ");
-                    opC = int.Parse(Console.ReadLine());
+                    e.cabecalho("Clientes");
+                    e.menu("Inserir clientes", "Listar clientes", "Monstrar por nome", "Monstrar por especie", "Remover por nome", "Remover por especie");
+                    e.linha();
+                    opC = e.leiaOp(6);
                     if (opC == 1){
-                        Console.WriteLine("------------------------------");
-                        Console.WriteLine("Inserir Clientes");
-                        Console.WriteLine("------------------------------");
+                        e.cabecalho("Inserir Clientes");
                         Console.Write("Nome: ");
                         nome = Console.ReadLine(); 
                         Console.Write("Número: ");
@@ -104,53 +79,37 @@ namespace zoologico
                         idade = ano - nasc;
                         z.inserirClientes(nome, numero, sexo, idade, saldo);
                     }else if(opC == 2){
-                        Console.WriteLine("------------------------------");
-                        Console.WriteLine("Listar Clientes");
-                        Console.WriteLine("------------------------------");
+                        e.cabecalho("Listar Clientes");
                         z.listarClientes();
                     }else if(opC == 3){
-                        Console.WriteLine("------------------------------");
-                        Console.WriteLine("Monstrar Cliente por Nome");
-                        Console.WriteLine("------------------------------");
+                        e.cabecalho("Monstrar Clientes por Nome");
                         Console.Write("Nome: ");
                         nome = Console.ReadLine();
                         z.monstrarClienteNome(nome);
                     }else if(opC == 4){
-                        Console.WriteLine("------------------------------");
-                        Console.WriteLine("Monstar Cliente por Especie");
-                        Console.WriteLine("------------------------------");
+                        e.cabecalho("Monstrar Clientes por Sexo");
                         Console.Write("Sexo: ");
                         sexo = Console.ReadLine();
                         z.monstrarClienteSexo(sexo);
                     }else if(opC == 3){
-                        Console.WriteLine("------------------------------");
-                        Console.WriteLine("Remover Cliente por Nome");
-                        Console.WriteLine("------------------------------");
+                        e.cabecalho("Remover Clientes por Nome");
                         Console.Write("Nome: ");
                         nome = Console.ReadLine();
                         z.RemoverClienteNome(nome);
                     }else if(opC == 4){
-                        Console.WriteLine("------------------------------");
-                        Console.WriteLine("Remover Cliente por Número");
-                        Console.WriteLine("------------------------------");
+                        e.cabecalho("Remover Clientes por Número");
                         Console.Write("Número: ");
                         numero = int.Parse(Console.ReadLine());
                         z.RemoverClienteNumero(numero);
                     }
                 }
                 if(op == 3){
-                    Console.WriteLine("------------------------------");
-                    Console.WriteLine("Funcionarios");
-                    Console.WriteLine("------------------------------");
-                    Console.WriteLine("Escolhe a sua opção: ");
-                    Console.WriteLine(" [1] - Inserir funcionarios\n [2] - Listar funcionarios\n [3] - Monstrar por nome\n [4] - Monstrar por especie\n [5] - Remover por nome\n [6] - Remover por Numero");
-                    Console.WriteLine("------------------------------");
-                    Console.Write("Escolhe a sua opção: ");
-                    opF = int.Parse(Console.ReadLine());
+                    e.cabecalho("Funcionarios");
+                    e.menu("Inserir funcionarios", "Listar funcionarios", "Monstrar por nome", "Monstrar por especie", "Remover por nome", "Remover por Numero");
+                    e.linha();
+                    opF = e.leiaOp(6);
                     if (opF == 1){
-                        Console.WriteLine("------------------------------");
-                        Console.WriteLine("Inserir Funcionarios");
-                        Console.WriteLine("------------------------------");
+                        e.cabecalho("Inserir Funcionarios");
                         Console.Write("Nome: ");
                         nome = Console.ReadLine(); 
                         Console.Write("Número: ");
@@ -168,43 +127,36 @@ namespace zoologico
                         idade = ano - nasc;
                         z.inserirFuncionarios(nome, numero, sexo, idade, departamento, habilidades, salario);
                     }else if(opF == 2){
-                        Console.WriteLine("------------------------------");
-                        Console.WriteLine("Listar Funcionarios");
-                        Console.WriteLine("------------------------------");
+                        e.cabecalho("Listar Funcionarios");
                         z.listarFuncionarios();
                     }else if(opF == 3){
-                        Console.WriteLine("------------------------------");
-                        Console.WriteLine("Monstrar Funcionarios por Nome");
-                        Console.WriteLine("------------------------------");
+                        e.cabecalho("Monstrar Funcionarios por Nome");
                         Console.Write("Nome: ");
                         nome = Console.ReadLine();
                         z.monstrarFuncionarioNome(nome);
                     }else if(opF == 4){
-                        Console.WriteLine("------------------------------");
-                        Console.WriteLine("Monstar Funcionarios por Sexo");
-                        Console.WriteLine("------------------------------");
+                        e.cabecalho("Monstrar Funcionarios por Sexo");
                         Console.Write("Sexo: ");
                         sexo = Console.ReadLine();
                         z.monstrarFuncionarioSexo(sexo);
                     }else if(opF == 3){
-                        Console.WriteLine("------------------------------");
-                        Console.WriteLine("Remover Funcionario por Nome");
-                        Console.WriteLine("------------------------------");
+                        e.cabecalho("Remover Funcionarios por Nome");
                         Console.Write("Nome: ");
                         nome = Console.ReadLine();
                         z.RemoverFuncionarioNome(nome);
                     }else if(opF == 4){
-                        Console.WriteLine("------------------------------");
-                        Console.WriteLine("Remover Funcionario por Sexo");
-                        Console.WriteLine("------------------------------");
+                        e.cabecalho("Remover Funcionarios por Sexo");
                         Console.Write("Número: ");
                         numero = int.Parse(Console.ReadLine());
                         z.RemoverFuncionarioNumero(numero);
                     }
                 }
-                
+                char teste = e.verificarOp("Quer continuar: ");
+                if(teste == 'N'){
+                    break;
+                }
+                Console.Clear();
             }
-            */
         }
     }
 }
@@ -212,10 +164,50 @@ class Estrutura{
     public void linha(){
         Console.WriteLine("------------------------------");
     }
-    public void Cabecalho(string msg){
+    public void cabecalho(string msg){
         Console.WriteLine("------------------------------");
+        Console.ForegroundColor = ConsoleColor.Blue;
         Console.WriteLine("{0}", msg);
+        Console.ResetColor();
         Console.WriteLine("------------------------------");
+    }
+    public void menu(params string[]texto){
+        Console.ForegroundColor = ConsoleColor.Black;
+        Console.BackgroundColor = ConsoleColor.White;
+        Console.WriteLine("Escolha sua opção: ");
+        int c = 1;
+        foreach (var item in texto)
+        {
+            Console.WriteLine(" [{0}] - {1}", c, item);
+            c += 1;
+        }
+        Console.ResetColor();
+    }
+    public int leiaOp(int op){
+        int opc;
+        while(true){
+            Console.Write("Sua Opção: ");
+            opc = int.Parse(Console.ReadLine());
+            if(opc > 0 && opc <= op){
+                return opc;
+            }
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Opção Invalida!!! \nDigite um número entre 1 e {0}", op);
+            Console.ResetColor();
+        }
+    }
+    public char verificarOp(string texto){
+        while(true){
+            Console.Write("{0}", texto);
+            string op = (Console.ReadLine()).ToUpper();
+            char res = op[0];
+            if(res == 'S' || res == 'N'){
+                return res;
+            }
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Opção Invalida!!! \nDigite um apenas S/N.");
+            Console.ResetColor();
+        }
     }
 }
 class Zoologico
