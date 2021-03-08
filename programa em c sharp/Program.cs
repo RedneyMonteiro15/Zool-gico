@@ -6,6 +6,7 @@ namespace zoologico
     {
         static void Main(string[] args)
         {
+            /*
             Zoologico z = new Zoologico();
             int ano = 2021;
             while (true){
@@ -203,7 +204,18 @@ namespace zoologico
                 }
                 
             }
+            */
         }
+    }
+}
+class Estrutura{
+    public void linha(){
+        Console.WriteLine("------------------------------");
+    }
+    public void Cabecalho(string msg){
+        Console.WriteLine("------------------------------");
+        Console.WriteLine("{0}", msg);
+        Console.WriteLine("------------------------------");
     }
 }
 class Zoologico
