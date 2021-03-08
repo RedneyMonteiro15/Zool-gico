@@ -19,7 +19,6 @@ namespace zoologico
                 op = e.leiaOp(6);
                 if(op == 1){
                     e.cabecalho("Animais");
-                    Console.WriteLine("Escolhe a sua opção: ");
                     e.menu("Inserir aAnimais", "listar animais", "Monstrar por nome", "Monstrar por especie", "Remover por nome", "Remover por especie");
                     e.linha();
                     opA = e.leiaOp(3);
