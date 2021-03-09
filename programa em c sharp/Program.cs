@@ -150,8 +150,10 @@ namespace zoologico
                         z.RemoverFuncionarioNumero(numero);
                     }
                 }
+                e.linha();
                 char teste = e.verificarOp("Quer continuar: ");
                 if(teste == 'N'){
+                    e.cabecalho("Fim do programa!!!");
                     break;
                 }
                 Console.Clear();
@@ -175,10 +177,11 @@ class Estrutura{
         Console.BackgroundColor = ConsoleColor.White;
         Console.WriteLine("{0}", "Escolha sua opção:".PadRight(30));
         int c = 1;
-        string 
+        string aux;
         foreach (var item in texto)
         {
-            Console.WriteLine("{0[{1}] - {2}}", c, item);
+            aux = "[" + c + "]" + " - " + item;
+            Console.WriteLine("{0}", aux.PadRight(30));
             c += 1;
         }
         Console.ResetColor();
