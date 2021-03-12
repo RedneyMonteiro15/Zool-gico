@@ -11,7 +11,8 @@ namespace zoologico
             int ano = DateTime.Now.Year;
             while (true){
                 int op, opA, opC, opF, numero, quantidade, nasc, idade;
-                string nome, sexo, departamento, habilidades, especie, descricao;
+                string nome, departamento, habilidades, especie, descricao;
+                char sexo;
                 double saldo, salario;
                 e.cabecalho("Zoologico CV-SV");
                 e.menu("Animais", "Clientes", "Funcionarios");
@@ -69,8 +70,7 @@ namespace zoologico
                         nome = Console.ReadLine(); 
                         Console.Write("Número: ");
                         numero = int.Parse(Console.ReadLine());
-                        Console.Write("Sexo: ");
-                        sexo = Console.ReadLine();
+                        sexo = e.verificarSexo("Sexo: ");
                         Console.Write("Ano nascimento: ");
                         nasc = int.Parse(Console.ReadLine());
                         Console.Write("Saldo: ");
@@ -87,8 +87,7 @@ namespace zoologico
                         z.monstrarClienteNome(nome);
                     }else if(opC == 4){
                         e.cabecalho("Monstrar Clientes por Sexo");
-                        Console.Write("Sexo: ");
-                        sexo = Console.ReadLine();
+                        sexo = e.verificarSexo("Sexo: ");
                         z.monstrarClienteSexo(sexo);
                     }else if(opC == 3){
                         e.cabecalho("Remover Clientes por Nome");
@@ -113,8 +112,7 @@ namespace zoologico
                         nome = Console.ReadLine(); 
                         Console.Write("Número: ");
                         numero = int.Parse(Console.ReadLine());
-                        Console.Write("Sexo: ");
-                        sexo = Console.ReadLine();
+                        sexo = e.verificarSexo("Sexo: ");
                         Console.Write("Ano nascimento: ");
                         nasc = int.Parse(Console.ReadLine());
                         Console.Write("Departamento: ");
@@ -135,8 +133,7 @@ namespace zoologico
                         z.monstrarFuncionarioNome(nome);
                     }else if(opF == 4){
                         e.cabecalho("Monstrar Funcionarios por Sexo");
-                        Console.Write("Sexo: ");
-                        sexo = Console.ReadLine();
+                        sexo = e.verificarSexo("Sexo: ");
                         z.monstrarFuncionarioSexo(sexo);
                     }else if(opF == 3){
                         e.cabecalho("Remover Funcionarios por Nome");
@@ -219,6 +216,19 @@ class Estrutura{
         direita = (total / 2) + teste.Length;
         esquerda = num - direita;
         Console.WriteLine("{0}{1}", teste.PadLeft(direita, ' '), test.PadRight(esquerda-1, ' '));
+    }
+    public char verificarSexo(string msg){
+        string op;
+        while (true){
+            Console.Write(msg);
+            op = Console.ReadLine();
+            if(op[0] == 'M' || op[0] == 'F'){
+                return op[0];
+            }
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("ERRO!!! Digite um sexo válido [M/F].");
+            Console.ResetColor();
+        }
     }
 }
 class Zoologico
@@ -411,7 +421,7 @@ class Zoologico
         Console.WriteLine("Registro funcionario, removido com sucesso!");
         Console.ResetColor();
     }
-    public void inserirClientes(string nome, int numero, string sexo, int nasc, double salario)
+    public void inserirClientes(string nome, int numero, char sexo, int nasc, double salario)
     {
         Clientes c = new Clientes(nome, numero, sexo, nasc, salario);
         if(c == null){
@@ -440,7 +450,7 @@ class Zoologico
             }
         }
     }
-    public void monstrarClienteSexo(string sexo){
+    public void monstrarClienteSexo(char sexo){
         foreach (Clientes c in listaClientes)
         {
             if (sexo == c.getSexoCliente())
@@ -513,6 +523,14 @@ class Zoologico
         foreach (Funcionarios f in listaFuncionarios)
         {
             if (f.getEstadoFuncionario() == "REFORMADO"){
+                f.monstrarFuncionarios();
+            }
+        }
+    }
+    public void listarFuncionariosSexo(char sexo){
+        foreach (Funcionarios f in listaFuncionarios)
+        {
+            if(f.getSexoFuncionario() == sexo){
                 f.monstrarFuncionarios();
             }
         }
@@ -603,10 +621,11 @@ class Funcionarios
 }
 class Clientes
 {
-    string nome, sexo;
+    string nome;
+    char sexo;
     int numero, nasc;
     double saldo;
-    public Clientes(string nome, int numero, string sexo, int nasc, double saldo){
+    public Clientes(string nome, int numero, char sexo, int nasc, double saldo){
         this.nome = nome;
         this.numero = numero;
         this.sexo = sexo;
@@ -631,7 +650,7 @@ class Clientes
     public int getNumeroCliente(){
         return this.numero;
     }
-    public string getSexoCliente(){
+    public char getSexoCliente(){
         return this.sexo;
     }
 }
