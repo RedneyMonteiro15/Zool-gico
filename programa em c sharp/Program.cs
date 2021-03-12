@@ -8,6 +8,8 @@ namespace zoologico
         {
             Zoologico z = new Zoologico();
             Estrutura e = new Estrutura();
+            char pra = e.verificarSexo("Sexo: ");
+            Console.WriteLine(pra);
             int ano = DateTime.Now.Year;
             while (true){
                 int op, opA, opC, opF, numero, quantidade, nasc, idade;
@@ -221,7 +223,7 @@ class Estrutura{
         string op;
         while (true){
             Console.Write(msg);
-            op = Console.ReadLine();
+            op = (Console.ReadLine()).ToUpper();
             if(op[0] == 'M' || op[0] == 'F'){
                 return op[0];
             }
