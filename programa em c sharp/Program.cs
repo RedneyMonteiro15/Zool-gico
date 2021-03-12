@@ -331,7 +331,7 @@ class Zoologico
         Console.WriteLine("Registro animal, removido com sucesso!");
         Console.ResetColor();
     }
-    public void inserirFuncionarios(string nome, int numero, string sexo, int nasc, string departamento, string habilidades, double salario)
+    public void inserirFuncionarios(string nome, int numero, char sexo, int nasc, string departamento, string habilidades, double salario)
     {
         Funcionarios f = new Funcionarios(nome, numero, sexo, nasc, departamento, habilidades, salario);
         if(f == null){
@@ -360,7 +360,7 @@ class Zoologico
             }
         }
     }
-    public void monstrarFuncionarioSexo(string sexo){
+    public void monstrarFuncionarioSexo(char sexo){
         foreach (Funcionarios f in listaFuncionarios)
         {
             if (sexo == f.getSexoFuncionario())
@@ -570,10 +570,11 @@ class Animais
 }
 class Funcionarios
 {
-    string nome, departamento, habilidades, sexo, estado;
+    string nome, departamento, habilidades, estado;
+    char sexo;
     int numero, idade;
     double salario;
-    public Funcionarios(string nome, int numero, string sexo, int idade, string departamento, string habilidades, double salario)
+    public Funcionarios(string nome, int numero, char sexo, int idade, string departamento, string habilidades, double salario)
     {
         this.nome = nome;
         this.numero = numero;
@@ -606,7 +607,7 @@ class Funcionarios
     public int getNumeroFuncionario(){
         return this.numero;
     }
-    public string getSexoFuncionario(){
+    public char getSexoFuncionario(){
         return this.sexo;
     }
     public int getIdadeFuncionario(){
