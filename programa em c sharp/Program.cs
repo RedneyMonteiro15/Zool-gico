@@ -13,7 +13,7 @@ namespace zoologico
                 int op, opA, opC, opF, numero, quantidade, nasc, idade;
                 string nome, sexo, departamento, habilidades, especie, descricao;
                 double saldo, salario;
-                e.cabecalho("Zoologico");
+                e.cabecalho("Zoologico CV-SV");
                 e.menu("Animais", "Clientes", "Funcionarios");
                 e.linha();
                 op = e.leiaOp(6);
@@ -501,6 +501,22 @@ class Zoologico
         Console.WriteLine("Registro cliente, removido com sucesso!");
         Console.ResetColor();
     }
+    public void Reforma(){
+        foreach (Funcionarios f in listaFuncionarios)
+        {
+            if(f.getIdadeFuncionario() > 65){
+                f.alterarEstado("REFORMADO");
+            }
+        }
+    }
+    public void listarFuncionariosReformado(){
+        foreach (Funcionarios f in listaFuncionarios)
+        {
+            if (f.getEstadoFuncionario() == "REFORMADO"){
+                f.monstrarFuncionarios();
+            }
+        }
+    }
 }
 class Animais
 {
@@ -536,18 +552,19 @@ class Animais
 }
 class Funcionarios
 {
-    string nome, departamento, habilidades, sexo;
-    int numero, nasc;
+    string nome, departamento, habilidades, sexo, estado;
+    int numero, idade;
     double salario;
-    public Funcionarios(string nome, int numero, string sexo, int nasc, string departamento, string habilidades, double salario)
+    public Funcionarios(string nome, int numero, string sexo, int idade, string departamento, string habilidades, double salario)
     {
         this.nome = nome;
         this.numero = numero;
         this.sexo = sexo;
-        this.nasc = nasc;
+        this.idade = idade;
         this.departamento = departamento;
         this.habilidades = habilidades;
         this.salario = salario;
+        this.estado = "ATIVO";
     }
     public void monstrarFuncionarios()
     {
@@ -559,10 +576,11 @@ class Funcionarios
         Console.WriteLine("Nome: {0}", this.nome);
         Console.WriteLine("Número: {0}",this.numero);
         Console.WriteLine("Sexo: {0}", this.sexo);
-        Console.WriteLine("Idade: {0}", this.nasc);
+        Console.WriteLine("Idade: {0}", this.idade);
         Console.WriteLine("Departamento: {0}", this.departamento);
         Console.WriteLine("Habilidades: {0}",this.habilidades);
         Console.WriteLine("Salario: {0}", this.salario);
+        Console.WriteLine("Estado: {0}", this.estado);
     }
     public string getNomeFuncionario(){
         return this.nome;
@@ -573,22 +591,29 @@ class Funcionarios
     public string getSexoFuncionario(){
         return this.sexo;
     }
+    public int getIdadeFuncionario(){
+        return this.idade;
+    }
+    public string getEstadoFuncionario(){
+        return this.estado;
+    }
+    public void alterarEstado(string estado){
+        this.estado = estado;
+    }
 }
 class Clientes
 {
     string nome, sexo;
     int numero, nasc;
     double saldo;
-    public Clientes(string nome, int numero, string sexo, int nasc, double saldo)
-    {
+    public Clientes(string nome, int numero, string sexo, int nasc, double saldo){
         this.nome = nome;
         this.numero = numero;
         this.sexo = sexo;
         this.nasc = nasc;
         this.saldo = saldo;
     }
-    public void monstrarClientes()
-    {
+    public void monstrarClientes(){
         Console.WriteLine("----------------------");
         Console.ForegroundColor = ConsoleColor.Blue;
         Console.WriteLine("Lista dos Clientes");
