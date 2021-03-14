@@ -553,10 +553,10 @@ class Animais
         Console.WriteLine(" Lista dos Animais  ");
         Console.ResetColor();
         Console.WriteLine("--------------------");
-        Console.WriteLine("Nome: {0}", this.nome);
-        Console.WriteLine("Especie: {0}",this.especie);
-        Console.WriteLine("Descrição: {0}", this.descricao);
-        Console.WriteLine("Quantidade: {0}", this.quantidade);
+        Console.WriteLine($"Nome: {this.nome}");
+        Console.WriteLine($"Especie: {this.especie}");
+        Console.WriteLine($"Descrição: {this.descricao}");
+        Console.WriteLine($"Quantidade: {this.quantidade}");
     }
     public string getNomeAnimal()
     {
@@ -591,14 +591,14 @@ class Funcionarios
         Console.WriteLine("Lista dos Funcionarios");
         Console.ResetColor();
         Console.WriteLine("----------------------");
-        Console.WriteLine("Nome: {0}", this.nome);
-        Console.WriteLine("Número: {0}",this.numero);
-        Console.WriteLine("Sexo: {0}", this.sexo);
-        Console.WriteLine("Idade: {0}", this.idade);
-        Console.WriteLine("Departamento: {0}", this.departamento);
-        Console.WriteLine("Habilidades: {0}",this.habilidades);
-        Console.WriteLine("Salario: {0}", this.salario);
-        Console.WriteLine("Estado: {0}", this.estado);
+        Console.WriteLine($"Nome: {this.nome}");
+        Console.WriteLine($"Número: {this.numero}");
+        Console.WriteLine($"Sexo: {this.sexo}");
+        Console.WriteLine($"Idade: {this.idade}");
+        Console.WriteLine($"Departamento: {this.departamento}");
+        Console.WriteLine($"Habilidades: {this.habilidades}");
+        Console.WriteLine($"Salario: {this.salario}");
+        Console.WriteLine($"Estado: {this.estado}");
     }
     public string getNomeFuncionario(){
         return this.nome;
@@ -639,10 +639,10 @@ class Clientes
         Console.ResetColor();
         Console.WriteLine("----------------------");
         Console.WriteLine($"Nome: {this.nome}");
-        Console.WriteLine("Número: {0}",this.numero);
-        Console.WriteLine("Sexo: {0}", this.sexo);
-        Console.WriteLine("Idade: {0}", this.nasc);
-        Console.WriteLine("Saldo: {0}", this.saldo);
+        Console.WriteLine($"Número: {this.numero}");
+        Console.WriteLine($"Sexo: {this.sexo}");
+        Console.WriteLine($"Idade: {this.nasc}");
+        Console.WriteLine($"Saldo: {this.saldo}");
     }
     public string getNomeCliente(){
         return this.nome;
