@@ -227,9 +227,6 @@ namespace zoologico
         }
     }
 }
-class Estrutura{
-    
-}
 class Zoologico
 {
     List<Animais> listaAnimais;
